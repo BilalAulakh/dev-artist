@@ -45,13 +45,17 @@ const About = () => {
 
                     <div className="profile-card" style={{ width: '320px' }}>
                         <div className="img-container">
-                            <img src={danishImg} alt="CEO" className='object-fit-contain'/>
+                            <img src={danishImg} alt="CEO" />
                         </div>
                         <div className="info-container">
-                            <div className="name">Mr. John Doe</div>
+                            <div className="name">Danish Faryad</div>
                             <span className="role role-ceo">Chief Executive Officer</span>
-                            <div className="qualification">MBA (Harvard)</div>
-                            <p style={{ fontSize: '0.9rem', color: '#888', marginBottom: '15px' }}>Driving the company's global strategy and ensuring sustainable business growth.</p>
+                            <div className="qualification">BSCS (Hons)</div>
+                            <p style={{ fontSize: '0.9rem', color: '#888', marginBottom: '15px' }}>Transform Your App Idea into a Stunning Reality
+
+Are you ready to bring your mobile app vision to life? You're in the right place.
+
+With extensive experience in mobile app development, I specialize in building high-quality Android, iOS, and Flutter applications with custom UI designs tailored to your brand. </p>
                             <div className="social-links">
                                 <a href="#"><i className="fab fa-linkedin"></i></a>
                                 <a href="#"><i className="fas fa-envelope"></i></a>
