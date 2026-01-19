@@ -6,7 +6,9 @@ const Academy = () => {
 
     const handleFilter = (category) => {
         setFilter(category);
+        
     };
+
 
     const courses = [
         { category: 'web', icon: 'fas fa-laptop-code', tagClass: 'tag-web', tagName: 'Web Development', title: 'Frontend Fundamentals', desc: 'Start here. Learn HTML5, CSS3, and JavaScript basics to create beautiful, responsive websites.', duration: '8 Weeks', level: 'Beginner', bgClass: 'cat-web' },
