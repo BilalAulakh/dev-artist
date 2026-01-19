@@ -21,8 +21,8 @@
 
 .logo-wrapper {
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 150px;
+  height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,8 +32,8 @@
 /* Glowing background effect behind logo */
 .logo-glow {
   position: absolute;
-  width: 60%;
-  height: 60%;
+  width: 100%;
+  height: 100%;
   background: radial-gradient(circle, var(--primary-blue) 0%, transparent 70%);
   opacity: 0.2;
   filter: blur(20px);
@@ -41,7 +41,7 @@
 }
 
 .app-logo {
-  width: 180px;
+  width: 100px;
   height: auto;
   z-index: 2;
   object-fit: contain;
@@ -50,8 +50,8 @@
 
 .spinner-ring {
   position: absolute;
-  width: 60%;
-  height: 60%;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   border: 3px solid transparent;
   border-top-color: var(--primary-blue);
@@ -91,65 +91,32 @@
   line-height: 1;
 }
 
-.loading-dots span:nth-child(1) {
-  animation-delay: 0s;
-}
-.loading-dots span:nth-child(2) {
-  animation-delay: 0.2s;
-}
-.loading-dots span:nth-child(3) {
-  animation-delay: 0.4s;
-}
+.loading-dots span:nth-child(1) { animation-delay: 0s; }
+.loading-dots span:nth-child(2) { animation-delay: 0.2s; }
+.loading-dots span:nth-child(3) { animation-delay: 0.4s; }
 
 /* Animations */
 @keyframes spin-ring {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 @keyframes spin-ring-reverse {
-  0% {
-    transform: rotate(360deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
 }
 
 @keyframes pulse-logo {
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.05);
-    opacity: 0.9;
-  }
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.9; }
 }
 
 @keyframes pulse-glow {
-  0%,
-  100% {
-    opacity: 0.2;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.4;
-    transform: scale(1.2);
-  }
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.2); }
 }
 
 @keyframes fade-text {
-  0%,
-  100% {
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 1;
-  }
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
 }
