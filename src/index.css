@@ -82,25 +82,40 @@ h1, h2, h3 { font-weight: 700; line-height: 1.2; }
 /* --- HEADER & NAV --- */
 header {
     background-color: rgba(10, 14, 39, 0.95);
-    padding: 20px 0;
+    height: 80px; /* Fixed sleek height */
+    padding: 0; 
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
     border-bottom: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+}
+
+header .container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0 40px; /* Space from edges */
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 100%;
 }
 
 .logo {
-    font-size: 1.8rem;
-    font-weight: 700;
+    display: flex;
+    align-items: center;
 }
-.logo span { color: var(--primary-blue); }
+.logo img {
+    max-height: 70px; /* Optimized size */
+    width: auto;
+}
+/*.logo span { color: var(--primary-blue); }*/
 
 .nav-links {
     display: flex;
