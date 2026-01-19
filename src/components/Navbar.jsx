@@ -1,56 +1,46 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState } from 'react';
+import { NavLink, Link } from 'react-router-dom';
 
 const Navbar = () => {
-    const [click, setClick] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
-    const location = useLocation();
+  const [isOpen, setIsOpen] = useState(false);
 
-    const handleClick = () => setClick(!click);
-    const closeMobileMenu = () => setClick(false);
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 50) {
-                setScrolled(true);
-            } else {
-                setScrolled(false);
-            }
-        };
+  const activeStyle = {
+    color: 'var(--primary-blue)'
+  };
 
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
-    // Helper to scroll to top when navigating
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [location]);
-
-    return (
-        <header style={{
-            backgroundColor: scrolled ? '#0a0e27' : 'rgba(10, 14, 39, 0.95)',
-            transition: 'background-color 0.3s ease'
-        }}>
-            <div className="container">
-                <nav>
-                    <Link to="/" className="logo" onClick={closeMobileMenu}>
-                        DEV <span>ARTIST</span>
-                    </Link>
-                    <ul className={click ? "nav-links active" : "nav-links"}>
-                        <li><Link to="/" onClick={closeMobileMenu}>Home</Link></li>
-                        <li><Link to="/academy" onClick={closeMobileMenu}>Academy</Link></li>
-                        <li><Link to="/services" onClick={closeMobileMenu}>Client Services</Link></li>
-                        <li><Link to="/about" onClick={closeMobileMenu}>About</Link></li>
-                        <li><Link to="/contact" onClick={closeMobileMenu}>Contact</Link></li>
-                    </ul>
-                    <div className="hamburger" onClick={handleClick}>
-                        <i className={click ? "fas fa-times" : "fas fa-bars"}></i>
-                    </div>
-                </nav>
-            </div>
-        </header>
-    );
+  return (
+    <header>
+        <div className="container">
+            <nav>
+                <Link to="/" className="logo">DEV <span>ARTIST</span></Link>
+                <ul className={`nav-links ${isOpen ? 'active' : ''}`}>
+                    <li>
+                        <NavLink to="/" style={({ isActive }) => isActive ? activeStyle : undefined} end>Home</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/academy" style={({ isActive }) => isActive ? activeStyle : undefined}>Academy</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/services" style={({ isActive }) => isActive ? activeStyle : undefined}>Client Services</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/about" style={({ isActive }) => isActive ? activeStyle : undefined}>About</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/contact" style={({ isActive }) => isActive ? activeStyle : undefined}>Contact</NavLink>
+                    </li>
+                </ul>
+                <div className="hamburger" onClick={toggleMenu}>
+                    <i className="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+  );
 };
 
 export default Navbar;

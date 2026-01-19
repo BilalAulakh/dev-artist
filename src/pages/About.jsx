@@ -2,8 +2,7 @@ import React from 'react';
 
 const About = () => {
     return (
-        <div>
-            {/* HERO */}
+        <>
             <div className="page-header" style={{ backgroundImage: "linear-gradient(rgba(10,14,39,0.9), rgba(10,14,39,0.9)), url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')" }}>
                 <div className="container">
                     <h1>Meet The Visionaries</h1>
@@ -11,7 +10,6 @@ const About = () => {
                 </div>
             </div>
 
-            {/* MISSION */}
             <section className="mission-section">
                 <div className="container">
                     <h2>Our Philosophy</h2>
@@ -19,7 +17,6 @@ const About = () => {
                 </div>
             </section>
 
-            {/* TEAM SECTION */}
             <div className="container team-section">
 
                 <div className="section-header">
@@ -149,7 +146,7 @@ const About = () => {
                 </div>
 
             </div>
-        </div>
+        </>
     );
 };
 

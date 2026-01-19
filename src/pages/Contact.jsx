@@ -1,16 +1,14 @@
 import React from 'react';
 
 const Contact = () => {
-
-    const submitForm = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         alert("Thank you! Your message has been sent successfully. Our team will contact you within 24 hours.");
         e.target.reset();
     };
 
     return (
-        <div>
-            {/* PAGE HEADER */}
+        <>
             <div className="page-header" style={{ backgroundImage: "linear-gradient(rgba(10,14,39,0.9), rgba(10,14,39,0.9)), url('https://images.unsplash.com/photo-1423666639041-f56000c27a9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')" }}>
                 <div className="container">
                     <h1>Get In Touch</h1>
@@ -19,7 +17,7 @@ const Contact = () => {
             </div>
 
             <div className="container contact-section">
-                <div className="contact-wrapper">
+                <div className="contact-page-wrapper">
 
                     <div className="contact-info">
                         <h2>Contact Info</h2>
@@ -59,13 +57,13 @@ const Contact = () => {
                         <div className="map-container">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3403.496924823296!2d74.30236131510257!3d31.4555819813904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3919067b84820155%3A0x6b449b925d7629b3!2sArfa%20Software%20Technology%20Park!5e0!3m2!1sen!2s!4v1625574321234!5m2!1sen!2s"
-                                width="100%" height="100%" style={{ border: 0 }} allowFullScreen="" loading="lazy">
+                                width="100%" height="100%" style={{ border: 0 }} allowFullScreen="" loading="lazy" title="Location">
                             </iframe>
                         </div>
                     </div>
 
                     <div className="contact-form-container">
-                        <form id="contactForm" onSubmit={submitForm}>
+                        <form id="contactForm" onSubmit={handleSubmit}>
                             <div className="form-group">
                                 <label>Your Name</label>
                                 <input type="text" className="form-control" placeholder="John Doe" required />
@@ -124,7 +122,7 @@ const Contact = () => {
 
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 

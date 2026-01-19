@@ -1,22 +1,31 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Home = () => {
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.hash) {
+            const elem = document.getElementById(location.hash.slice(1));
+            if (elem) {
+                elem.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    }, [location]);
+
     return (
-        <div>
-            {/* HERO SECTION */}
+        <>
             <section id="home">
                 <div className="container hero-content">
                     <h1>Crafting Logic.<br /><span>Coding Art.</span></h1>
                     <p>A Tech Academy for the next generation. A Development Agency for global businesses. We blend creativity with engineering.</p>
                     <div className="hero-buttons">
-                        <Link to="/academy" className="btn btn-primary">Start Learning</Link>
-                        <Link to="/contact" className="btn btn-accent">Hire Us</Link>
+                        <a href="#academy" className="btn btn-primary">Start Learning</a>
+                        <a href="#contact" className="btn btn-accent">Hire Us</a>
                     </div>
                 </div>
             </section>
 
-            {/* ACADEMY SECTION */}
             <section id="academy">
                 <div className="container">
                     <span className="section-subtitle">The Academy</span>
@@ -26,31 +35,30 @@ const Home = () => {
                             <i className="fas fa-code course-icon"></i>
                             <h3>Web Development</h3>
                             <p>Master HTML, CSS, and JS to build stunning websites. The foundation of the web.</p>
-                            <Link to="/academy" style={{ color: 'var(--primary-blue)', fontWeight: 600 }}>View Syllabus &rarr;</Link>
+                            <Link to="/contact" style={{ color: 'var(--primary-blue)', fontWeight: 600 }}>View Syllabus &rarr;</Link>
                         </div>
                         <div className="course-card">
                             <i className="fab fa-python course-icon"></i>
                             <h3>Python & Logic</h3>
                             <p>The world's most popular language. Learn data science, automation, and backend logic.</p>
-                            <Link to="/academy" style={{ color: 'var(--accent-green)', fontWeight: 600 }}>View Syllabus &rarr;</Link>
+                            <Link to="/contact" style={{ color: 'var(--accent-green)', fontWeight: 600 }}>View Syllabus &rarr;</Link>
                         </div>
                         <div className="course-card">
                             <i className="fas fa-mobile-alt course-icon"></i>
                             <h3>App Innovation</h3>
                             <p>Build your first mobile app. From idea to the App Store using modern frameworks.</p>
-                            <Link to="/academy" style={{ color: 'var(--accent-orange)', fontWeight: 600 }}>View Syllabus &rarr;</Link>
+                            <Link to="/contact" style={{ color: 'var(--accent-orange)', fontWeight: 600 }}>View Syllabus &rarr;</Link>
                         </div>
                         <div className="course-card">
                             <i className="fas fa-brain course-icon"></i>
                             <h3>AI & Robotics</h3>
                             <p>Step into the future. Understanding Artificial Intelligence and machine learning concepts.</p>
-                            <Link to="/academy" style={{ color: '#e83e8c', fontWeight: 600 }}>View Syllabus &rarr;</Link>
+                            <Link to="/contact" style={{ color: '#e83e8c', fontWeight: 600 }}>View Syllabus &rarr;</Link>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* SERVICES SECTION */}
             <section id="services">
                 <div className="container">
                     <span className="section-subtitle">Agency Services</span>
@@ -80,7 +88,6 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* STATS */}
             <section id="stats">
                 <div className="container stats-grid">
                     <div className="stat-item">
@@ -98,7 +105,6 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* ABOUT */}
             <section id="about">
                 <div className="container">
                     <span className="section-subtitle">Who We Are</span>
@@ -126,7 +132,6 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* CONTACT */}
             <section id="contact">
                 <div className="container">
                     <h2 className="section-title">Get In Touch</h2>
@@ -149,11 +154,7 @@ const Home = () => {
                             </div>
                         </div>
 
-                        <form className="contact-form" onSubmit={(e) => {
-                            e.preventDefault();
-                            alert("Thank you! Your message has been sent to the Dev Artist team. We will contact you shortly.");
-                            e.target.reset();
-                        }}>
+                        <form className="contact-form" onSubmit={(e) => { e.preventDefault(); alert('Thank you! Your message has been sent to the Dev Artist team. We will contact you shortly.'); e.target.reset(); }}>
                             <input type="text" placeholder="Your Name" required />
                             <input type="email" placeholder="Your Email" required />
                             <select>
@@ -161,14 +162,14 @@ const Home = () => {
                                 <option>I am interested in: Hiring for Project</option>
                                 <option>General Inquiry</option>
                             </select>
-                            <textarea rows="5" placeholder="Your Message" required style={{ resize: 'none' }}></textarea>
+                            <textarea rows="5" placeholder="Your Message" required></textarea>
                             <button type="submit" className="btn btn-primary" style={{ width: '100%' }}>Send Message</button>
                         </form>
                     </div>
                 </div>
             </section>
-        </div>
+        </>
     );
-}
+};
 
 export default Home;

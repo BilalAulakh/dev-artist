@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 const Services = () => {
     return (
-        <div>
-            <div className="page-header">
+        <>
+            <div className="page-header" style={{ backgroundImage: "linear-gradient(rgba(10,14,39,0.9), rgba(10,14,39,0.9)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')" }}>
                 <div className="container">
                     <h1>We Engineer Success</h1>
                     <p>From startups to enterprise solutions. Explore our full range of technical services designed to scale your business.</p>
@@ -12,6 +12,7 @@ const Services = () => {
             </div>
 
             <div className="container services-section">
+
                 <div className="service-category">
                     <div className="service-content">
                         <h2 style={{ color: 'var(--primary-blue)' }}>Web Development</h2>
@@ -56,6 +57,7 @@ const Services = () => {
                     </div>
                     <div className="service-image" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1555255707-c07966088b7b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')" }}></div>
                 </div>
+
             </div>
 
             <div className="reviews-section">
@@ -112,8 +114,8 @@ const Services = () => {
                     </div>
                 </div>
             </div>
-        </div>
-    )
-}
+        </>
+    );
+};
 
 export default Services;
