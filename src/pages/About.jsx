@@ -1,4 +1,5 @@
 import React from 'react';
+import danishImg from '../assets/danish-img.jpeg';
 
 const About = () => {
     return (
@@ -44,7 +45,7 @@ const About = () => {
 
                     <div className="profile-card" style={{ width: '320px' }}>
                         <div className="img-container">
-                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="CEO" />
+                            <img src={danishImg} alt="CEO" className='object-fit-contain'/>
                         </div>
                         <div className="info-container">
                             <div className="name">Mr. John Doe</div>
