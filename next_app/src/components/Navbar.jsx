@@ -8,6 +8,7 @@ import logo from '../assets/logo without bg.png';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    
     const pathname = usePathname();
 
     const toggleMenu = () => {
