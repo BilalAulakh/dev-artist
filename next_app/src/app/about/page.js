@@ -22,6 +22,7 @@ const About = () => {
                     <h2>Our Philosophy</h2>
                     <p>"At Dev Artist, we believe that code is modern art. Our mission is to equip the young generation with the tools to paint their future using logic, and to help businesses sculpt their digital presence with precision engineering."</p>
                 </div>
+                
             </section>
 
             <div className="container team-section">
