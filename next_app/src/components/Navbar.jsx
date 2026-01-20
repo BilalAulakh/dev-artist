@@ -8,7 +8,7 @@ import logo from '../assets/logo without bg.png';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    
+
     const pathname = usePathname();
 
     const toggleMenu = () => {
@@ -16,7 +16,7 @@ const Navbar = () => {
     };
 
     const activeStyle = {
-        color: 'var(--primary-blue)'
+        color: 'var(--primary-purple)'
     };
 
     const isActive = (path) => pathname === path;
@@ -26,7 +26,7 @@ const Navbar = () => {
             <div className="container">
                 <nav>
                     <Link href="/" className="">
-                        <Image src={logo} alt="DEV ARTIST" height={150} width={150} style={{ objectFit: 'contain' }} />
+                        <Image src={logo} alt="DEV ARTIST" height={200} width={200} style={{ objectFit: 'contain', maxHeight: '100px', width: 'auto' }} />
                     </Link>
                     <ul className={`nav-links ${isOpen ? 'active' : ''}`}>
                         <li>
