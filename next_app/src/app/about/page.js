@@ -1,6 +1,5 @@
-import React from 'react';
-import Image from 'next/image';
 import danishImg from '@/assets/danish-img.jpeg';
+import Image from 'next/image';
 
 export const metadata = {
     title: 'About Us | Dev Artist - Empowering Innovation',
@@ -93,10 +92,10 @@ const About = () => {
                                 </div>
                             </div>
                             <div className="leader-info">
-                                <h3 className="leader-name">Mr. Ahmed Khan</h3>
+                                <h3 className="leader-name">Muhammad Hussain</h3>
                                 <span className="leader-role" style={{ color: 'var(--accent-orange)' }}>Founder & Visionary</span>
-                                <span className="leader-qualification">PhD Computer Science</span>
-                                <p className="leader-bio">The visionary behind Dev Artist with 15+ years of experience in technology education and software development. Passionate about creating opportunities for aspiring developers.</p>
+                                <span className="leader-qualification">Software Engineering & Architecture</span>
+                                <p className="leader-bio">The visionary behind Dev Artist with experience in technology education and software development. Passionate about creating opportunities for aspiring developers.</p>
                             </div>
                         </div>
 
@@ -113,9 +112,9 @@ const About = () => {
                             </div>
                             <div className="leader-info">
                                 <h3 className="leader-name">Danish Faryad</h3>
-                                <span className="leader-role" style={{ color: 'var(--primary-purple)' }}>Chief Executive Officer</span>
-                                <span className="leader-qualification">BSCS (Hons) - Mobile App Specialist</span>
-                                <p className="leader-bio">Expert in mobile app development with extensive experience in Android, iOS, and Flutter. Transforms app ideas into stunning realities with custom UI designs tailored to your brand.</p>
+                                <span className="leader-role" style={{ color: 'var(--primary-purple)' }}>CEO & Director</span>
+                                <span className="leader-qualification">Technical Lead | Building Scalable Mobile & Automation Solutions with Flutter, iOS & CRM Integrations</span>
+                                <p className="leader-bio">Expert in mobile app development with strong expertise in Flutter, Android, and iOS. Focused on delivering scalable, high-performance apps and turning ideas into impactful digital solutions with brand-driven UI design.</p>
                             </div>
                         </div>
 
@@ -131,7 +130,7 @@ const About = () => {
                                 </div>
                             </div>
                             <div className="leader-info">
-                                <h3 className="leader-name">Ms. Sarah Ali</h3>
+                                <h3 className="leader-name">Muhammad Rizwan</h3>
                                 <span className="leader-role" style={{ color: 'var(--accent-pink)' }}>Managing Director</span>
                                 <span className="leader-qualification">PMP & MS Management</span>
                                 <p className="leader-bio">Oversees daily operations, client relations, and ensures high-quality project delivery. Expert in project management and business development with a proven track record.</p>

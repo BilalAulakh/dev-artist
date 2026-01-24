@@ -142,7 +142,7 @@ const Home = () => {
                     <span className="section-subtitle">Let's Connect</span>
                     <h2 className="section-title">Ready to Start Your Journey?</h2>
                     <p className="section-description">Whether you want to learn new skills or build your next big project, we're here to help you succeed.</p>
-                    
+
                     <div className="contact-wrapper">
                         <div className="contact-info">
                             <h3>Get in Touch</h3>
@@ -150,15 +150,16 @@ const Home = () => {
 
                             <div className="info-item">
                                 <i className="fas fa-map-marker-alt"></i>
-                                <span>123 Innovation Street, Tech City, TC 12345</span>
+                                <span>Office No.2, Second Floor, Adam Plaza, Above Stylo Shoes, Bilal Chowk, Samnabad, Faisalabad</span>
                             </div>
                             <div className="info-item">
                                 <i className="fas fa-phone"></i>
-                                <span>+1 (555) 123-4567</span>
+                                <span>+92 320 3000555</span>
+                                <span>+92 334 3474707</span>
                             </div>
                             <div className="info-item">
                                 <i className="fas fa-envelope"></i>
-                                <span>hello@devartist.com</span>
+                                <span>thedevartist.1@gmail.com</span>
                             </div>
                         </div>
 

@@ -38,15 +38,18 @@ const Contact = () => {
                                 <i className="fas fa-phone-alt"></i>
                                 <div>
                                     <span style={{ display: 'block', fontWeight: 'bold', marginBottom: '5px', color: 'var(--text-white)' }}>Phone</span>
-                                    <span>+1 234 567 890</span>
+                                    <span>+92 320 3000555</span>
+                                </div>
+                                <div>
+                                    <span style={{ display: 'block', fontWeight: 'bold', marginBottom: '5px', color: 'var(--text-white)' }}>Phone</span>
+                                    <span>+92 334 3474707</span>
                                 </div>
                             </div>
-
                             <div className="info-item">
                                 <i className="fas fa-envelope"></i>
                                 <div>
                                     <span style={{ display: 'block', fontWeight: 'bold', marginBottom: '5px', color: 'var(--text-white)' }}>Email</span>
-                                    <span>info@devartist.com</span>
+                                    <span>thedevartist@gmail.com</span>
                                 </div>
                             </div>
 
@@ -61,10 +64,10 @@ const Contact = () => {
 
                         <form className="contact-form" onSubmit={handleSubmit}>
                             <h3 style={{ color: 'var(--text-white)', marginBottom: '20px' }}>Send Message</h3>
-                            
+
                             <input type="text" placeholder="Your Name *" required />
                             <input type="email" placeholder="Email Address *" required />
-                            
+
                             <select required>
                                 <option value="">I am interested in...</option>
                                 <option>Student Admission (Academy)</option>
@@ -72,10 +75,10 @@ const Contact = () => {
                                 <option>Job Application</option>
                                 <option>General Inquiry</option>
                             </select>
-                            
+
                             <input type="text" placeholder="Subject" />
                             <textarea rows="5" placeholder="Write your message here... *" required></textarea>
-                            
+
                             <button type="submit">Send Message</button>
                         </form>
                     </div>
@@ -86,7 +89,7 @@ const Contact = () => {
                 <div className="container">
                     <span className="section-subtitle" style={{ display: 'block', textAlign: 'center', marginBottom: '10px' }}>Common Queries</span>
                     <h2 className="section-title" style={{ textAlign: 'center', marginBottom: '60px' }}>Frequently Asked Questions</h2>
-                    
+
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px' }}>
                         <div className="feature-card" style={{ padding: '30px', height: '100%' }}>
                             <div className="feature-icon"><i className="fas fa-laptop-code"></i></div>
