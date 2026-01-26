@@ -30,7 +30,7 @@ const Contact = () => {
                                 <i className="fas fa-map-marker-alt"></i>
                                 <div>
                                     <span style={{ display: 'block', fontWeight: 'bold', marginBottom: '5px', color: 'var(--text-white)' }}>Address</span>
-                                    <span>123 Innovation Avenue, Tech District, City 54000</span>
+                                    <span>Office No 2, 2nd Floor, Adam Plaza, Above Stylo Shoes, Bilal Chowk, Samanabad, Faisalabad</span>
                                 </div>
                             </div>
 
@@ -49,7 +49,7 @@ const Contact = () => {
                                 <i className="fas fa-envelope"></i>
                                 <div>
                                     <span style={{ display: 'block', fontWeight: 'bold', marginBottom: '5px', color: 'var(--text-white)' }}>Email</span>
-                                    <span>thedevartist@gmail.com</span>
+                                    <span>thedevartist.1@gmail.com</span>
                                 </div>
                             </div>
 

@@ -150,7 +150,7 @@ const Home = () => {
 
                             <div className="info-item">
                                 <i className="fas fa-map-marker-alt"></i>
-                                <span>Office No.2, Second Floor, Adam Plaza, Above Stylo Shoes, Bilal Chowk, Samnabad, Faisalabad</span>
+                                <span>Office No 2, 2nd Floor, Adam Plaza, Above Stylo Shoes, Bilal Chowk, Samanabad, Faisalabad</span>
                             </div>
                             <div className="info-item">
                                 <i className="fas fa-phone"></i>

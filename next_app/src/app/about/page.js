@@ -1,3 +1,5 @@
+import hussainImg from '@/assets/hussainimg.jpeg';
+import rizwanImg from '@/assets/rizwanimg.jpeg';
 import danishImg from '@/assets/danish-img.jpeg';
 import Image from 'next/image';
 
@@ -81,8 +83,8 @@ const About = () => {
 
                     <div className="leadership-grid">
                         <div className="leader-card">
-                            <div className="leader-image-wrapper" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg-darker)' }}>
-                                <i className="fas fa-user-tie" style={{ fontSize: '80px', color: 'var(--text-muted)' }}></i>
+                            <div className="leader-image-wrapper">
+                                <Image src={hussainImg} alt="Muhammad Hussain" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
                                 <div className="leader-overlay">
                                     <div className="social-links-leader">
                                         <a href="#" aria-label="LinkedIn"><i className="fab fa-linkedin"></i></a>
@@ -101,7 +103,7 @@ const About = () => {
 
                         <div className="leader-card">
                             <div className="leader-image-wrapper">
-                                <Image src={danishImg} alt="CEO" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                <Image src={danishImg} alt="CEO" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
                                 <div className="leader-overlay">
                                     <div className="social-links-leader">
                                         <a href="#" aria-label="LinkedIn"><i className="fab fa-linkedin"></i></a>
@@ -119,8 +121,8 @@ const About = () => {
                         </div>
 
                         <div className="leader-card">
-                            <div className="leader-image-wrapper" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg-darker)' }}>
-                                <i className="fas fa-user-tie" style={{ fontSize: '80px', color: 'var(--text-muted)' }}></i>
+                            <div className="leader-image-wrapper">
+                                <Image src={rizwanImg} alt="Muhammad Rizwan" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
                                 <div className="leader-overlay">
                                     <div className="social-links-leader">
                                         <a href="#" aria-label="LinkedIn"><i className="fab fa-linkedin"></i></a>
@@ -149,86 +151,86 @@ const About = () => {
 
                     <div className="expert-grid">
                         <div className="expert-card glass">
-                            <div className="expert-avatar" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg-darker)' }}>
+                            <div className="expert-avatar" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg-darker)', borderRadius: '50%' }}>
+                                <i className="fas fa-user" style={{ fontSize: '60px', color: 'var(--text-muted)' }}></i>
+                                <div className="expert-badge" style={{ background: 'var(--accent-orange)' }}>
+                                    <i className="fas fa-crown"></i>
+                                </div>
+                            </div>
+                            <h4 className="expert-name">Muhammad Hussain</h4>
+                            <span className="expert-role">Founder & Visionary</span>
+                            <span className="expert-qualification">Software Engineering</span>
+                            <div className="expert-skills">
+                                <span className="skill-tag">Architecture</span>
+                                <span className="skill-tag">Leadership</span>
+                                <span className="skill-tag">Strategy</span>
+                            </div>
+                            <div className="expert-social">
+                                <a href="#"><i className="fab fa-linkedin"></i></a>
+                                <a href="#"><i className="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+
+                        <div className="expert-card glass">
+                            <div className="expert-avatar" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg-darker)', borderRadius: '50%' }}>
+                                <i className="fas fa-user" style={{ fontSize: '60px', color: 'var(--text-muted)' }}></i>
+                                <div className="expert-badge" style={{ background: 'var(--primary-purple)' }}>
+                                    <i className="fas fa-rocket"></i>
+                                </div>
+                            </div>
+                            <h4 className="expert-name">Danish Faryad</h4>
+                            <span className="expert-role">CEO & Director</span>
+                            <span className="expert-qualification">Technical Lead</span>
+                            <div className="expert-skills">
+                                <span className="skill-tag">Flutter</span>
+                                <span className="skill-tag">Mobile Apps</span>
+                                <span className="skill-tag">Automation</span>
+                            </div>
+                            <div className="expert-social">
+                                <a href="#"><i className="fab fa-linkedin"></i></a>
+                                <a href="#"><i className="fab fa-github"></i></a>
+                            </div>
+                        </div>
+
+                        <div className="expert-card glass">
+                            <div className="expert-avatar" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg-darker)', borderRadius: '50%' }}>
+                                <i className="fas fa-user" style={{ fontSize: '60px', color: 'var(--text-muted)' }}></i>
+                                <div className="expert-badge" style={{ background: 'var(--accent-pink)' }}>
+                                    <i className="fas fa-tasks"></i>
+                                </div>
+                            </div>
+                            <h4 className="expert-name">Muhammad Rizwan</h4>
+                            <span className="expert-role">Managing Director</span>
+                            <span className="expert-qualification">PMP & MS Management</span>
+                            <div className="expert-skills">
+                                <span className="skill-tag">Project Mgmt</span>
+                                <span className="skill-tag">Operations</span>
+                                <span className="skill-tag">Planning</span>
+                            </div>
+                            <div className="expert-social">
+                                <a href="#"><i className="fab fa-linkedin"></i></a>
+                                <a href="#"><i className="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+
+                        <div className="expert-card glass">
+                            <div className="expert-avatar" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg-darker)', borderRadius: '50%' }}>
                                 <i className="fas fa-user" style={{ fontSize: '60px', color: 'var(--text-muted)' }}></i>
                                 <div className="expert-badge" style={{ background: 'var(--primary-blue)' }}>
                                     <i className="fas fa-code"></i>
                                 </div>
                             </div>
-                            <h4 className="expert-name">Ali Raza</h4>
-                            <span className="expert-role">Senior Web Instructor</span>
-                            <span className="expert-qualification">BS Software Engineering</span>
+                            <h4 className="expert-name">Muhammad Bilal</h4>
+                            <span className="expert-role">React.js & Next.js Developer</span>
+                            <span className="expert-qualification">Frontend Specialist</span>
                             <div className="expert-skills">
-                                <span className="skill-tag">React</span>
-                                <span className="skill-tag">Node.js</span>
+                                <span className="skill-tag">React.js</span>
                                 <span className="skill-tag">Next.js</span>
+                                <span className="skill-tag">Tailwind</span>
                             </div>
                             <div className="expert-social">
                                 <a href="#"><i className="fab fa-github"></i></a>
                                 <a href="#"><i className="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-
-                        <div className="expert-card glass">
-                            <div className="expert-avatar" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg-darker)' }}>
-                                <i className="fas fa-user" style={{ fontSize: '60px', color: 'var(--text-muted)' }}></i>
-                                <div className="expert-badge" style={{ background: 'var(--accent-green)' }}>
-                                    <i className="fas fa-palette"></i>
-                                </div>
-                            </div>
-                            <h4 className="expert-name">Zainab Bibi</h4>
-                            <span className="expert-role">UI/UX Lead Designer</span>
-                            <span className="expert-qualification">Certified Google UX Designer</span>
-                            <div className="expert-skills">
-                                <span className="skill-tag">Figma</span>
-                                <span className="skill-tag">Adobe XD</span>
-                                <span className="skill-tag">Design Systems</span>
-                            </div>
-                            <div className="expert-social">
-                                <a href="#"><i className="fab fa-dribbble"></i></a>
-                                <a href="#"><i className="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-
-                        <div className="expert-card glass">
-                            <div className="expert-avatar" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg-darker)' }}>
-                                <i className="fas fa-user" style={{ fontSize: '60px', color: 'var(--text-muted)' }}></i>
-                                <div className="expert-badge" style={{ background: 'var(--primary-purple)' }}>
-                                    <i className="fas fa-brain"></i>
-                                </div>
-                            </div>
-                            <h4 className="expert-name">Bilal Ahmed</h4>
-                            <span className="expert-role">AI & Python Mentor</span>
-                            <span className="expert-qualification">MS Data Science</span>
-                            <div className="expert-skills">
-                                <span className="skill-tag">Python</span>
-                                <span className="skill-tag">TensorFlow</span>
-                                <span className="skill-tag">ML</span>
-                            </div>
-                            <div className="expert-social">
-                                <a href="#"><i className="fab fa-python"></i></a>
-                                <a href="#"><i className="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-
-                        <div className="expert-card glass">
-                            <div className="expert-avatar" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg-darker)' }}>
-                                <i className="fas fa-user" style={{ fontSize: '60px', color: 'var(--text-muted)' }}></i>
-                                <div className="expert-badge" style={{ background: 'var(--accent-cyan)' }}>
-                                    <i className="fas fa-mobile-alt"></i>
-                                </div>
-                            </div>
-                            <h4 className="expert-name">Usman V.</h4>
-                            <span className="expert-role">Mobile App Lead</span>
-                            <span className="expert-qualification">Flutter Expert</span>
-                            <div className="expert-skills">
-                                <span className="skill-tag">Flutter</span>
-                                <span className="skill-tag">React Native</span>
-                                <span className="skill-tag">iOS/Android</span>
-                            </div>
-                            <div className="expert-social">
-                                <a href="#"><i className="fab fa-android"></i></a>
-                                <a href="#"><i className="fab fa-apple"></i></a>
                             </div>
                         </div>
                     </div>
