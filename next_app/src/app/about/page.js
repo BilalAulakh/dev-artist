@@ -1,161 +1,127 @@
 import React from 'react';
-import Image from 'next/image';
-import danishImg from '@/assets/danish-img.jpeg';
+import Link from 'next/link';
 
 export const metadata = {
-    title: 'About Us | DEV ARTIST',
-    description: 'Meet the team behind Dev Artist',
+    title: 'About Us | Devsinc',
+    description: 'Learn about Devsinc, our mission, leadership, and global reach.',
 };
 
 const About = () => {
     return (
         <>
-            <div className="page-header" style={{ backgroundImage: "linear-gradient(rgba(10,14,39,0.9), rgba(10,14,39,0.9)), url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')" }}>
+            {/* ABOUT HEADER */}
+            <div className="section-padding" style={{ background: 'var(--bg-light)', marginTop: '90px', textAlign: 'center' }}>
                 <div className="container">
-                    <h1>Meet The Visionaries</h1>
-                    <p>We are a team of engineers, artists, and educators united by a passion for technology.</p>
+                    <span className="section-subtitle">Who We Are</span>
+                    <h1 className="section-title">Human-First is Our Foundation</h1>
+                    <p style={{ maxWidth: '800px', margin: '0 auto', color: 'var(--text-gray)', fontSize: '1.1rem' }}>
+                        Devsinc is a global software development agency that helps businesses scale their technology life cycle with high-end engineering talent.
+                    </p>
                 </div>
             </div>
 
-            <section className="mission-section">
-                <div className="container">
-                    <h2>Our Philosophy</h2>
-                    <p>"At Dev Artist, we believe that code is modern art. Our mission is to equip the young generation with the tools to paint their future using logic, and to help businesses sculpt their digital presence with precision engineering."</p>
+            {/* MISSION SECTION */}
+            <section className="section-padding">
+                <div className="container" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center' }}>
+                    <div>
+                        <h2 className="section-title" style={{ textAlign: 'left' }}>Empowering Businesses <span>Globally</span></h2>
+                        <p style={{ color: 'var(--text-gray)', marginBottom: '30px' }}>
+                            For over 15 years, we have been at the forefront of digital transformation, helping startups and enterprises alike build robust software solutions that drive growth.
+                        </p>
+                        <p style={{ color: 'var(--text-gray)', marginBottom: '30px' }}>
+                            Our mission is simple: to provide unparalleled technical expertise and human-centric solutions that empower our clients to lead in their respective industries.
+                        </p>
+                        <Link href="/contact" className="btn btn-primary">Join Our Team</Link>
+                    </div>
+                    <div style={{ background: 'var(--bg-light)', height: '400px', borderRadius: '8px', overflow: 'hidden' }}>
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Office Culture" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    </div>
                 </div>
             </section>
 
-            <div className="container team-section">
-
-                <div className="section-header">
-                    <h2>Executive Leadership</h2>
-                    <div className="separator"></div>
+            {/* LEADERSHIP */}
+            <section className="section-padding" id="leadership" style={{ backgroundColor: '#fdfdfd' }}>
+                <div className="container">
+                    <span className="section-subtitle">Leadership</span>
+                    <h2 className="section-title">Guided by <span>Excellence</span></h2>
+                    <div className="services-grid" style={{ marginTop: '50px' }}>
+                        <div className="profile-card">
+                            <div className="img-container">
+                                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="CEO" />
+                            </div>
+                            <div className="info-container">
+                                <h3 className="name">Usman Asif</h3>
+                                <p className="role" style={{ color: 'var(--accent-red)' }}>Founder & CEO</p>
+                                <div className="social-links">
+                                    <a href="#"><i className="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="profile-card">
+                            <div className="img-container">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="CFO" />
+                            </div>
+                            <div className="info-container">
+                                <h3 className="name">Maria Sadaf</h3>
+                                <p className="role" style={{ color: 'var(--accent-red)' }}>Chief of Staff</p>
+                                <div className="social-links">
+                                    <a href="#"><i className="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="profile-card">
+                            <div className="img-container">
+                                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="CDO" />
+                            </div>
+                            <div className="info-container">
+                                <h3 className="name">Badar Shafiq</h3>
+                                <p className="role" style={{ color: 'var(--accent-red)' }}>Chief Delivery Officer</p>
+                                <div className="social-links">
+                                    <a href="#"><i className="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </section>
 
-                <div className="leaders-grid">
-
-                    <div className="profile-card" style={{ width: '320px' }}>
-                        <div className="img-container">
-                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Founder" />
+            {/* GLOBAL REACH */}
+            <section className="section-padding">
+                <div className="container">
+                    <span className="section-subtitle">Global Reach</span>
+                    <h2 className="section-title">Where We <span>Operate</span></h2>
+                    <div className="grid-4" style={{ marginTop: '50px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '30px' }}>
+                        <div style={{ textAlign: 'center', padding: '30px', border: '1px solid var(--border-color)', borderRadius: '8px' }}>
+                            <i className="fas fa-map-marker-alt" style={{ fontSize: '2rem', color: 'var(--accent-red)', marginBottom: '15px' }}></i>
+                            <h4>Pakistan</h4>
+                            <p style={{ fontSize: '0.9rem', color: 'var(--text-gray)' }}>GDC - Lahore, Punjab</p>
                         </div>
-                        <div className="info-container">
-                            <div className="name">Mr. Ahmed Khan</div>
-                            <span className="role role-founder">Founder</span>
-                            <div className="qualification">PhD Computer Science</div>
-                            <p style={{ fontSize: '0.9rem', color: '#888', marginBottom: '15px' }}>The visionary behind Dev Artist. Focused on innovation and long-term academy goals.</p>
-                            <div className="social-links">
-                                <a href="#"><i className="fab fa-linkedin"></i></a>
-                                <a href="#"><i className="fab fa-twitter"></i></a>
-                            </div>
+                        <div style={{ textAlign: 'center', padding: '30px', border: '1px solid var(--border-color)', borderRadius: '8px' }}>
+                            <i className="fas fa-map-marker-alt" style={{ fontSize: '2rem', color: 'var(--accent-red)', marginBottom: '15px' }}></i>
+                            <h4>USA</h4>
+                            <p style={{ fontSize: '0.9rem', color: 'var(--text-gray)' }}>San Jose, CA</p>
                         </div>
-                    </div>
-
-                    <div className="profile-card" style={{ width: '320px' }}>
-                        <div className="img-container">
-                            <Image src={danishImg} alt="CEO" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                        <div style={{ textAlign: 'center', padding: '30px', border: '1px solid var(--border-color)', borderRadius: '8px' }}>
+                            <i className="fas fa-map-marker-alt" style={{ fontSize: '2rem', color: 'var(--accent-red)', marginBottom: '15px' }}></i>
+                            <h4>UAE</h4>
+                            <p style={{ fontSize: '0.9rem', color: 'var(--text-gray)' }}>Dubai, UAE</p>
                         </div>
-                        <div className="info-container">
-                            <div className="name">Danish Faryad</div>
-                            <span className="role role-ceo">Chief Executive Officer</span>
-                            <div className="qualification">BSCS (Hons)</div>
-                            <p style={{ fontSize: '0.9rem', color: '#888', marginBottom: '15px' }}>Transform Your App Idea into a Stunning Reality
-
-Are you ready to bring your mobile app vision to life? You're in the right place.
-
-With extensive experience in mobile app development, I specialize in building high-quality Android, iOS, and Flutter applications with custom UI designs tailored to your brand. </p>
-                            <div className="social-links">
-                                <a href="#"><i className="fab fa-linkedin"></i></a>
-                                <a href="#"><i className="fas fa-envelope"></i></a>
-                            </div>
+                        <div style={{ textAlign: 'center', padding: '30px', border: '1px solid var(--border-color)', borderRadius: '8px' }}>
+                            <i className="fas fa-map-marker-alt" style={{ fontSize: '2rem', color: 'var(--accent-red)', marginBottom: '15px' }}></i>
+                            <h4>UK</h4>
+                            <p style={{ fontSize: '0.9rem', color: 'var(--text-gray)' }}>London, UK</p>
                         </div>
                     </div>
-
-                    <div className="profile-card" style={{ width: '320px' }}>
-                        <div className="img-container">
-                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="MD" />
-                        </div>
-                        <div className="info-container">
-                            <div className="name">Ms. Sarah Ali</div>
-                            <span className="role role-md">Managing Director</span>
-                            <div className="qualification">PMP & MS Management</div>
-                            <p style={{ fontSize: '0.9rem', color: '#888', marginBottom: '15px' }}>Oversees daily operations, client relations, and ensures high-quality project delivery.</p>
-                            <div className="social-links">
-                                <a href="#"><i className="fab fa-linkedin"></i></a>
-                                <a href="#"><i className="fas fa-envelope"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
+            </section>
 
-                <div className="section-header" style={{ marginTop: '80px' }}>
-                    <h2>Expert Instructors & Developers</h2>
-                    <div className="separator" style={{ background: 'var(--primary-blue)' }}></div>
+            {/* CTA */}
+            <div className="section-padding" style={{ backgroundColor: 'var(--bg-dark)', color: 'white', textAlign: 'center' }}>
+                <div className="container">
+                    <h2 className="section-title" style={{ color: 'white' }}>Join the Global Leaders</h2>
+                    <p style={{ marginBottom: '40px', opacity: 0.8 }}>We're always looking for passionate engineers to join our team across 5 continents.</p>
+                    <Link href="/contact" className="btn btn-accent">Explore Careers</Link>
                 </div>
-
-                <div className="instructors-grid">
-
-                    <div className="profile-card">
-                        <div className="img-container">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Instructor" />
-                        </div>
-                        <div className="info-container">
-                            <div className="name">Ali Raza</div>
-                            <span className="role role-tech">Senior Web Instructor</span>
-                            <div className="qualification">BS Software Engineering</div>
-                            <div className="social-links">
-                                <a href="#"><i className="fab fa-github"></i></a>
-                                <a href="#"><i className="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="profile-card">
-                        <div className="img-container">
-                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Instructor" />
-                        </div>
-                        <div className="info-container">
-                            <div className="name">Zainab Bibi</div>
-                            <span className="role role-design">UI/UX Lead</span>
-                            <div className="qualification">Certified Google UX Designer</div>
-                            <div className="social-links">
-                                <a href="#"><i className="fab fa-dribbble"></i></a>
-                                <a href="#"><i className="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="profile-card">
-                        <div className="img-container">
-                            <img src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Instructor" />
-                        </div>
-                        <div className="info-container">
-                            <div className="name">Bilal Ahmed</div>
-                            <span className="role role-tech">AI & Python Mentor</span>
-                            <div className="qualification">MS Data Science</div>
-                            <div className="social-links">
-                                <a href="#"><i className="fab fa-python"></i></a>
-                                <a href="#"><i className="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="profile-card">
-                        <div className="img-container">
-                            <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Instructor" />
-                        </div>
-                        <div className="info-container">
-                            <div className="name">Usman V.</div>
-                            <span className="role role-tech">Mobile App Lead</span>
-                            <div className="qualification">Flutter Expert</div>
-                            <div className="social-links">
-                                <a href="#"><i className="fab fa-android"></i></a>
-                                <a href="#"><i className="fab fa-apple"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
             </div>
         </>
     );
