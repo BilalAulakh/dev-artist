@@ -13,6 +13,7 @@ const Chevron = () => (
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [servicesOpen, setServicesOpen] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -40,11 +41,11 @@ const Navbar = () => {
                         </Link>
                     </div>
 
-                    <div className="nav-center">
+                    <div className={`nav-center ${mobileMenuOpen ? 'mobile-open' : ''}`}>
                         <ul className="nav-links">
                             {menuItems.map((item) => (
                                 <li key={item}>
-                                    <Link href="#">
+                                    <Link href="#" onClick={() => setMobileMenuOpen(false)}>
                                         <span>{item}</span>
                                         <Chevron />
                                     </Link>
@@ -55,7 +56,7 @@ const Navbar = () => {
                                 onMouseEnter={() => setServicesOpen(true)}
                                 onMouseLeave={() => setServicesOpen(false)}
                             >
-                                <Link href="/services" prefetch onClick={() => setServicesOpen(false)}>
+                                <Link href="/services" prefetch onClick={() => { setServicesOpen(false); setMobileMenuOpen(false); }}>
                                     <span>Our Services</span>
                                     <Chevron />
                                 </Link>
@@ -101,6 +102,11 @@ const Navbar = () => {
                             <span>Global</span>
                             <Chevron />
                         </div>
+                        <button className={`hamburger ${mobileMenuOpen ? 'open' : ''}`} onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle Menu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
                     </div>
                 </nav>
             </div>
@@ -342,15 +348,86 @@ const Navbar = () => {
                     box-shadow: 0 8px 18px rgba(0, 194, 203, 0.35);
                 }
 
+                .hamburger {
+                    display: none;
+                    background: none;
+                    border: none;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    height: 18px;
+                    width: 24px;
+                    cursor: pointer;
+                    padding: 0;
+                    z-index: 1001;
+                    margin-left: 20px;
+                }
+                .hamburger span {
+                    display: block;
+                    width: 100%;
+                    height: 2px;
+                    background: #0c112b;
+                    transition: all 0.3s ease;
+                    border-radius: 2px;
+                }
+                .hamburger.open span:nth-child(1) {
+                    transform: translateY(8px) rotate(45deg);
+                }
+                .hamburger.open span:nth-child(2) {
+                    opacity: 0;
+                }
+                .hamburger.open span:nth-child(3) {
+                    transform: translateY(-8px) rotate(-45deg);
+                }
+
                 @media (max-width: 1100px) {
                     .mega-menu-inner { grid-template-columns: repeat(3, 1fr); }
                     .mega-cta { grid-column: 1 / -1; }
                 }
                 @media (max-width: 768px) {
                     .nav-container { padding: 0 20px; }
-                    .nav-links { gap: 24px; }
-                    .nav-links li a { font-size: 0.85rem; }
-                    .global-menu { padding: 8px 14px; font-size: 0.85rem; }
+                    .hamburger { display: flex; }
+                    .nav-center {
+                        position: fixed;
+                        top: 76px;
+                        left: 0;
+                        width: 100%;
+                        height: calc(100vh - 76px);
+                        background: #fff;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+                        padding: 40px 24px;
+                        transform: translateX(100%);
+                        transition: transform 0.3s ease, opacity 0.3s ease;
+                        opacity: 0;
+                        pointer-events: none;
+                        overflow-y: auto;
+                    }
+                    header.scrolled .nav-center {
+                        top: 64px;
+                        height: calc(100vh - 64px);
+                    }
+                    .nav-center.mobile-open {
+                        transform: translateX(0);
+                        opacity: 1;
+                        pointer-events: auto;
+                    }
+                    .nav-links {
+                        flex-direction: column;
+                        gap: 24px;
+                        width: 100%;
+                    }
+                    .nav-links li { width: 100%; }
+                    .nav-links li a {
+                        font-size: 1.1rem;
+                        display: flex;
+                        justify-content: space-between;
+                        width: 100%;
+                        padding: 12px 0;
+                        border-bottom: 1px solid rgba(0,0,0,0.05);
+                    }
+                    .nav-links li a::after { display: none; }
+                    .global-menu { display: none; }
                     .mega-menu { display: none; }
                 }
             `}</style>
