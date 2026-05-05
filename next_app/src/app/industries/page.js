@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 
 export const metadata = {
-    title: 'Industries We Serve | Devsinc',
+    title: 'Industries We Serve | thedev artist',
     description: 'Explore the diverse industries we serve with our expert software engineering solutions.',
 };
 

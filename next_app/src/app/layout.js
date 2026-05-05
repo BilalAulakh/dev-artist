@@ -11,7 +11,7 @@ const outfit = Outfit({
 });
 
 export const metadata = {
-  title: "DEV ARTIST | Tech Academy & Software Agency",
+  title: "thedev artist",
   description: "Dev Artist Tech",
 };
 

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { services } from '../../data/services';
 
 export const metadata = {
-    title: 'Our Services — Dev Artist',
+    title: 'Our Services — thedev artist',
     description: 'Engineering, marketing, and reputation services that help your business win.',
 };
 

@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 
 export const metadata = {
-    title: 'About Us | Devsinc',
+    title: 'About Us | thedev artist',
     description: 'Learn about Devsinc, our mission, leadership, and global reach.',
 };
 
