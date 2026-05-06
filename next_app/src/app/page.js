@@ -4,6 +4,7 @@ import Link from 'next/link';
 import danishImg from '../assets/danish.png';
 import bilalImg from '../assets/bilal.png';
 import rizwanImg from '../assets/rizwan.jpeg';
+import { industries } from '../data/industries';
 
 const Home = () => {
     const insightsRef = useRef(null);
@@ -125,9 +126,7 @@ const Home = () => {
                 <div className="container">
                     <div className="hero-content">
                         <h1 className="hero-heading">
-                            <span className="line-text">Building at the Speed</span>
-                            <span className="blue-cursor-block" aria-hidden="true"></span>
-                            <span className="line-text">of AI</span>
+                            <span className="line-text">Building at the Speed of AI</span>
                         </h1>
                         <p className="hero-subtitle">
                             We help companies across North America, Middle East, Africa and Asia Pacific with technological development
@@ -267,14 +266,11 @@ const Home = () => {
                 <div className="container">
                     <h2 className="section-title" style={{ fontSize: '3rem' }}>Discover our Impact Across Industries</h2>
                     <div className="industry-list">
-                        <div className="industry-item"><i className="fas fa-plane-departure"></i> Travel & Hospitality</div>
-                        <div className="industry-item"><i className="fas fa-university"></i> Public Sector</div>
-                        <div className="industry-item"><i className="fas fa-broadcast-tower"></i> Telecommunication</div>
-                        <div className="industry-item"><i className="fas fa-shopping-bag"></i> Retail & CPG</div>
-                        <div className="industry-item"><i className="fas fa-wallet"></i> Banking & Fintech</div>
-                        <div className="industry-item"><i className="fas fa-heartbeat"></i> Healthcare</div>
-                        <div className="industry-item"><i className="fas fa-gas-pump"></i> Oil, Gas, and Energy</div>
-                        <div className="industry-item"><i className="fas fa-gamepad"></i> Gaming</div>
+                        {industries.map((ind) => (
+                            <Link key={ind.slug} href={`/industries/${ind.slug}`} className="industry-item">
+                                <i className={ind.icon}></i> {ind.title}
+                            </Link>
+                        ))}
                     </div>
                     <div style={{ textAlign: 'center', marginTop: '50px' }}>
                         <Link href="/industries" className="btn btn-teal">See All Industries</Link>

@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import logoImg from '../assets/logo without bg.png';
+import BrandLogo from './BrandLogo';
 
 const Footer = () => {
     return (
@@ -8,7 +8,7 @@ const Footer = () => {
             <div className="container">
                 <div className="footer-top-nav">
                     <div className="footer-logo">
-                        <img src={logoImg.src} alt="Dev Artist" className="brand-logo" style={{ width: '180px', height: 'auto', transform: 'scale(1.5)', transformOrigin: 'left center' }} />
+                        <BrandLogo height={56} variant="light" />
                     </div>
 
                 </div>

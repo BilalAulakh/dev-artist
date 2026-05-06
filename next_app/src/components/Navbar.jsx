@@ -2,10 +2,10 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { services } from '../data/services';
-import logoImg from '../assets/logo without bg.png';
+import BrandLogo from './BrandLogo';
 
-const Chevron = () => (
-    <svg className="chevron" width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+const Chevron = ({ size = 10 }) => (
+    <svg className="chevron" width={size} height={size} viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M2 4.5L6 8.5L10 4.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
 );
@@ -23,7 +23,10 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const menuItems = ['What We Do', 'Who We Help'];
+    const menuItems = [
+        { label: 'What We Do', href: '/what-we-do' },
+        { label: 'Who We Help', href: '/who-we-help' },
+    ];
 
     // Group services by category for the mega menu
     const grouped = services.reduce((acc, s) => {
@@ -37,17 +40,16 @@ const Navbar = () => {
                 <nav>
                     <div className="nav-left">
                         <Link href="/" className="logo-container" aria-label="Home">
-                            <img src={logoImg.src} alt="Dev Artist" className="brand-logo" />
+                            <BrandLogo height={scrolled ? 38 : 44} />
                         </Link>
                     </div>
 
                     <div className={`nav-center ${mobileMenuOpen ? 'mobile-open' : ''}`}>
                         <ul className="nav-links">
                             {menuItems.map((item) => (
-                                <li key={item}>
-                                    <Link href="#" onClick={() => setMobileMenuOpen(false)}>
-                                        <span>{item}</span>
-                                        <Chevron />
+                                <li key={item.href}>
+                                    <Link href={item.href} prefetch onClick={() => setMobileMenuOpen(false)}>
+                                        <span>{item.label}</span>
                                     </Link>
                                 </li>
                             ))}
@@ -58,7 +60,7 @@ const Navbar = () => {
                             >
                                 <Link href="/services" prefetch onClick={() => { setServicesOpen(false); setMobileMenuOpen(false); }}>
                                     <span>Our Services</span>
-                                    <Chevron />
+                                    <Chevron size={16} />
                                 </Link>
                                 <div className={`mega-menu ${servicesOpen ? 'open' : ''}`}>
                                     <div className="mega-menu-inner">
@@ -152,14 +154,15 @@ const Navbar = () => {
                     align-items: center;
                 }
 
-                .brand-logo {
-                    width: 80px;
-                    height: auto;
-                    transform: scale(1.8);
-                    transform-origin: left center;
+                .nav-left :global(.logo-container) {
+                    display: inline-flex;
+                    align-items: center;
+                    line-height: 0;
                     transition: transform 0.3s ease;
                 }
-                .brand-logo:hover { transform: scale(1.85); }
+                .nav-left :global(.logo-container:hover) {
+                    transform: translateY(-1px);
+                }
 
                 .nav-center {
                     flex: 1;

@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { industries } from '../../data/industries';
 
 export const metadata = {
     title: 'Industries We Serve | thedev artist',
@@ -7,20 +8,11 @@ export const metadata = {
 };
 
 const Industries = () => {
-    const industries = [
-        { title: 'Travel & Hospitality', icon: 'fas fa-plane-departure', desc: 'Transforming travel experiences with AI-driven booking systems.' },
-        { title: 'Public Sector', icon: 'fas fa-university', desc: 'Empowering government agencies with secure, scalable solutions.' },
-        { title: 'Telecommunication', icon: 'fas fa-broadcast-tower', desc: 'Optimizing network operations and customer experiences.' },
-        { title: 'Retail & CPG', icon: 'fas fa-shopping-bag', desc: 'Building seamless e-commerce and supply chain systems.' },
-        { title: 'Banking & Fintech', icon: 'fas fa-wallet', desc: 'Driving financial innovation with secure payment gateways.' },
-        { title: 'Healthcare', icon: 'fas fa-heartbeat', desc: 'Improving patient outcomes with advanced health informatics.' },
-    ];
-
     return (
         <>
             <div className="section-padding" style={{ background: 'white', marginTop: '90px', textAlign: 'center' }}>
                 <div className="container">
-                    <span className="section-subtitle" style={{ color: 'var(--accent-teal)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '2px' }}>What we do</span>
+                    <span className="section-subtitle" style={{ color: 'var(--accent-teal)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '2px' }}>Who we help</span>
                     <h1 className="section-title" style={{ fontSize: '3.5rem', fontWeight: 800 }}>Industries <span>We Serve</span></h1>
                     <p style={{ maxWidth: '800px', margin: '0 auto', color: 'var(--text-gray)', fontSize: '1.2rem', lineHeight: '1.6' }}>
                         We bring domain-specific knowledge to every project, ensuring our solutions meet the unique challenges of your industry.
@@ -30,12 +22,20 @@ const Industries = () => {
 
             <div className="container section-padding">
                 <div className="services-grid">
-                    {industries.map((item, index) => (
-                        <div className="service-card" key={index}>
+                    {industries.map((item) => (
+                        <Link
+                            key={item.slug}
+                            href={`/industries/${item.slug}`}
+                            className="service-card"
+                            style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}
+                        >
                             <i className={`${item.icon} service-icon`}></i>
                             <h3>{item.title}</h3>
-                            <p>{item.desc}</p>
-                        </div>
+                            <p>{item.short}</p>
+                            <span style={{ display: 'inline-block', marginTop: '14px', color: 'var(--accent-teal)', fontWeight: 600, fontSize: '0.9rem' }}>
+                                Learn more →
+                            </span>
+                        </Link>
                     ))}
                 </div>
             </div>
