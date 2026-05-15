@@ -26,6 +26,8 @@ const Navbar = () => {
     const menuItems = [
         { label: 'What We Do', href: '/what-we-do' },
         { label: 'Who We Help', href: '/who-we-help' },
+        { label: 'Projects', href: '/projects' },
+        { label: 'Institute', href: '/institute' },
     ];
 
     // Group services by category for the mega menu
@@ -100,10 +102,9 @@ const Navbar = () => {
                     </div>
 
                     <div className="nav-right">
-                        <div className="global-menu">
-                            <span>Global</span>
-                            <Chevron />
-                        </div>
+                        <Link href="/#contact" className="global-menu" onClick={() => setMobileMenuOpen(false)}>
+                            <span>Contact Us</span>
+                        </Link>
                         <button className={`hamburger ${mobileMenuOpen ? 'open' : ''}`} onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle Menu">
                             <span></span>
                             <span></span>

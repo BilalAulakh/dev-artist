@@ -482,7 +482,7 @@ const Home = () => {
             </section>
 
             {/* INTEGRATED CONTACT SECTION */}
-            <section className="section-padding" style={{ background: '#f8fafc' }}>
+            <section id="contact" className="section-padding" style={{ background: '#f8fafc', scrollMarginTop: '90px' }}>
                 <div className="container">
                     <div className="contact-integrated">
                         <div className="contact-form-container">
@@ -510,12 +510,45 @@ const Home = () => {
                         </div>
                         <div className="contact-sidebar">
                             <div className="sidebar-item">
-                                <h3><i className="fas fa-map-marker-alt"></i> Our Headquarters</h3>
-                                <p>Office No 2, 2nd Floor, Adam Plaza, Above Stylo Shoes, Bilal Chowk, Samanabad, Faisalabad</p>
+                                <h3><i className="fas fa-map-marker-alt"></i> Headquarters (Bradford)</h3>
+                                <p>Bradford, United Kingdom</p>
+                                <p>
+                                    <a
+                                        href="https://wa.me/447423253692"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="sidebar-phone"
+                                        aria-label="Chat with Bradford office on WhatsApp"
+                                    >
+                                        <i className="fab fa-whatsapp"></i> +44 7423253692
+                                    </a>
+                                </p>
                             </div>
                             <div className="sidebar-item">
-                                <h3><i className="fas fa-phone-alt"></i> Call Us</h3>
-                                <p>+92 320 3000555<br/>+92 334 3474707</p>
+                                <h3><i className="fas fa-map-marker-alt"></i> Sub Office (Faisalabad)</h3>
+                                <p>Faisalabad, Punjab, Pakistan</p>
+                                <p>
+                                    <a
+                                        href="https://wa.me/923203000555"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="sidebar-phone"
+                                        aria-label="Chat with Faisalabad office on WhatsApp"
+                                    >
+                                        <i className="fab fa-whatsapp"></i> +92 320 3000555
+                                    </a>
+                                </p>
+                                <p>
+                                    <a
+                                        href="https://wa.me/923343474707"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="sidebar-phone"
+                                        aria-label="Chat with Faisalabad office on WhatsApp"
+                                    >
+                                        <i className="fab fa-whatsapp"></i> +92 334 3474707
+                                    </a>
+                                </p>
                             </div>
                             <div className="sidebar-item">
                                 <h3><i className="fas fa-envelope"></i> Email Us</h3>

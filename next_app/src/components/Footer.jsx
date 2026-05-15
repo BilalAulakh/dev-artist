@@ -14,16 +14,28 @@ const Footer = () => {
                 </div>
 
                 <div className="footer-locations-grid">
-                    {/* Headquarters */}
+                    {/* Headquarters - Bradford */}
                     <div className="location-col">
                         <div className="location-header">
-                            <strong>Headquarters</strong> <span className="office-type">(Faisalabad)</span>
+                            <strong>Headquarters</strong> <span className="office-type">(Bradford)</span>
+                            <span className="flag-icon">🇬🇧</span>
+                        </div>
+                        <p className="address">
+                            Bradford, United Kingdom
+                        </p>
+                        <div className="contact-details mt-15">
+                            <p className="phone"><i className="fas fa-phone-alt"></i> +44 7423253692</p>
+                        </div>
+                    </div>
+
+                    {/* Sub Office - Faisalabad */}
+                    <div className="location-col">
+                        <div className="location-header">
+                            <strong>Sub Office</strong> <span className="office-type">(Faisalabad)</span>
                             <span className="flag-icon">🇵🇰</span>
                         </div>
                         <p className="address">
-                            Office No 2, 2nd Floor, Adam Plaza,<br />
-                            Above Stylo Shoes, Bilal Chowk,<br />
-                            Samanabad, Faisalabad
+                            Faisalabad, Punjab, Pakistan
                         </p>
                         <div className="contact-details mt-15">
                             <p className="phone"><i className="fas fa-phone-alt"></i> +92 320 3000555</p>
