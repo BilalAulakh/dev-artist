@@ -47,7 +47,7 @@ export default async function IndustryDetailPage({ params }) {
                             <p className="service-hero-tagline">{industry.tagline}</p>
                             <p className="service-hero-desc">{industry.long}</p>
                             <div className="service-hero-actions">
-                                <Link href="/contact" className="btn-careers-pill">Discuss your project</Link>
+                                <Link href="/#contact" className="btn-careers-pill">Discuss your project</Link>
                                 <a href="#how-we-help" className="service-secondary-btn">See how we help →</a>
                             </div>
                         </div>
@@ -130,7 +130,7 @@ export default async function IndustryDetailPage({ params }) {
                 <div className="container">
                     <h2>Ready to build for {industry.title}?</h2>
                     <p>Tell us about your goals. We&apos;ll come back within one business day.</p>
-                    <Link href="/contact" className="btn-careers-pill">Start the conversation</Link>
+                    <Link href="/#contact" className="btn-careers-pill">Start the conversation</Link>
                 </div>
             </section>
         </main>

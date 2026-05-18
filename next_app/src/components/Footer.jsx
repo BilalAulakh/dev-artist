@@ -71,7 +71,7 @@ const Footer = () => {
                             engineering teams.
                         </p>
                         <div className="mt-15">
-                            <Link href="/contact" className="footer-cta-link">Start a Project →</Link>
+                            <Link href="/#contact" className="footer-cta-link">Start a Project →</Link>
                         </div>
                     </div>
                 </div>

@@ -31,7 +31,7 @@ const About = () => {
                         <p style={{ color: 'var(--text-gray)', marginBottom: '30px' }}>
                             Our mission is simple: to provide unparalleled technical expertise and human-centric solutions that empower our clients to lead in their respective industries.
                         </p>
-                        <Link href="/contact" className="btn btn-primary">Join Our Team</Link>
+                        <Link href="/#contact" className="btn btn-primary">Join Our Team</Link>
                     </div>
                     <div style={{ background: 'var(--bg-light)', height: '400px', borderRadius: '8px', overflow: 'hidden' }}>
                         <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Office Culture" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
@@ -120,7 +120,7 @@ const About = () => {
                 <div className="container">
                     <h2 className="section-title" style={{ color: 'white' }}>Join the Global Leaders</h2>
                     <p style={{ marginBottom: '40px', opacity: 0.8 }}>We're always looking for passionate engineers to join our team across 5 continents.</p>
-                    <Link href="/contact" className="btn btn-accent">Explore Careers</Link>
+                    <Link href="/#contact" className="btn btn-accent">Explore Careers</Link>
                 </div>
             </div>
         </>

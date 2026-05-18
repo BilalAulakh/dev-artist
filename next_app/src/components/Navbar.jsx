@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { services } from '../data/services';
 import BrandLogo from './BrandLogo';
 
@@ -14,6 +15,7 @@ const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [servicesOpen, setServicesOpen] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const pathname = usePathname();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -22,6 +24,31 @@ const Navbar = () => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    // Handle smooth scrolling when navigating to /#contact or clicking it
+    useEffect(() => {
+        if (window.location.hash === '#contact') {
+            const timer = setTimeout(() => {
+                const element = document.getElementById('contact');
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 100);
+            return () => clearTimeout(timer);
+        }
+    }, [pathname]);
+
+    const handleContactClick = (e) => {
+        setMobileMenuOpen(false);
+        if (window.location.pathname === '/') {
+            e.preventDefault();
+            const element = document.getElementById('contact');
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                window.history.pushState(null, '', '#contact');
+            }
+        }
+    };
 
     const menuItems = [
         { label: 'What We Do', href: '/what-we-do' },
@@ -55,6 +82,11 @@ const Navbar = () => {
                                     </Link>
                                 </li>
                             ))}
+                            <li className="mobile-only-contact">
+                                <Link href="/#contact" onClick={handleContactClick}>
+                                    <span>Contact Us</span>
+                                </Link>
+                            </li>
                             <li
                                 className="nav-services-item"
                                 onMouseEnter={() => setServicesOpen(true)}
@@ -102,7 +134,7 @@ const Navbar = () => {
                     </div>
 
                     <div className="nav-right">
-                        <Link href="/#contact" className="global-menu" onClick={() => setMobileMenuOpen(false)}>
+                        <Link href="/#contact" className="global-menu" onClick={handleContactClick}>
                             <span>Contact Us</span>
                         </Link>
                         <button className={`hamburger ${mobileMenuOpen ? 'open' : ''}`} onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle Menu">
@@ -204,6 +236,10 @@ const Navbar = () => {
                 }
                 .nav-links li a:hover { color: var(--accent-teal); }
                 .nav-links li a:hover::after { width: 100%; }
+
+                .mobile-only-contact {
+                    display: none;
+                }
 
                 :global(.chevron) {
                     color: var(--accent-teal);
@@ -433,6 +469,7 @@ const Navbar = () => {
                     .nav-links li a::after { display: none; }
                     .global-menu { display: none; }
                     .mega-menu { display: none; }
+                    .mobile-only-contact { display: block; }
                 }
             `}</style>
         </header>

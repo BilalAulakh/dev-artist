@@ -58,7 +58,7 @@ const Academy = () => {
                                     <span><i className="far fa-clock"></i> {course.duration}</span>
                                     <span><i className="fas fa-signal"></i> {course.level}</span>
                                 </div>
-                                <Link href="/contact" className="enroll-btn">Enquire Now</Link>
+                                <Link href="/#contact" className="enroll-btn">Enquire Now</Link>
                             </div>
                         </div>
                     ))}

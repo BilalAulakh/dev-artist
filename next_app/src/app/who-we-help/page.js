@@ -100,7 +100,7 @@ const WhoWeHelp = () => {
                 <div className="container">
                     <h2 className="section-title" style={{ color: 'white' }}>Don&apos;t see your space?</h2>
                     <p style={{ marginBottom: '40px', opacity: 0.8 }}>We&apos;ve worked across more verticals than we list — let&apos;s chat about yours.</p>
-                    <Link href="/contact" className="btn btn-accent">Start a Conversation</Link>
+                    <Link href="/#contact" className="btn btn-accent">Start a Conversation</Link>
                 </div>
             </div>
         </>

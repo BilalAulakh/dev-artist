@@ -88,7 +88,7 @@ const WhatWeDo = () => {
                 <div className="container">
                     <h2 className="section-title" style={{ color: 'white' }}>Not sure which capability fits?</h2>
                     <p style={{ marginBottom: '40px', opacity: 0.8 }}>Tell us about your goals — we&apos;ll recommend the right combination.</p>
-                    <Link href="/contact" className="btn btn-accent">Talk to our team</Link>
+                    <Link href="/#contact" className="btn btn-accent">Talk to our team</Link>
                 </div>
             </div>
         </>
