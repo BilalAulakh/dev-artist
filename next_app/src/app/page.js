@@ -3,11 +3,12 @@ import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import danishImg from '../assets/danish.png';
 import bilalImg from '../assets/bilal.png';
-import rizwanImg from '../assets/rizwan.jpeg';
+import rizwanImg from '../assets/ubaid-image.png';
 import { industries } from '../data/industries';
 
 const Home = () => {
     const insightsRef = useRef(null);
+    
     const trackRefs = useRef([]);
     const careersRef = useRef(null);
     const careersImgRef = useRef(null);
@@ -17,7 +18,7 @@ const Home = () => {
     const leaders = [
         { name: 'Danish Faryad', role: 'Founder & CEO', img: danishImg.src, linkedin: 'https://www.linkedin.com/in/danish-faryad-2157a32a6' },
         { name: 'Muhammad Bilal', role: 'Chief Technology Officer', img: bilalImg.src, linkedin: 'https://www.linkedin.com/in/muhammad-bilal-9b950a3a6' },
-        { name: 'Muhammad Rizwan', role: 'Managing Director', img: rizwanImg.src, linkedin: 'https://www.linkedin.com/in/rizwan-riaz-gill' },
+        { name: 'Ubaid Umer', role: 'Managing Director', img: rizwanImg.src, linkedin: '' },
     ];
 
     useEffect(() => {
