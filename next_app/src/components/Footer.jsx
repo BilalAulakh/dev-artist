@@ -1,62 +1,84 @@
 import React from 'react';
 import Link from 'next/link';
+import logoImg from '../assets/logo without bg.png';
 
 const Footer = () => {
     return (
-        <footer>
+        <footer className="main-footer">
             <div className="container">
-                <div className="footer-grid">
-                    <div className="footer-col">
-                        <h4>Company</h4>
-                        <ul>
-                            <li><Link href="/">Home</Link></li>
-                            <li><Link href="/about">About Us</Link></li>
-                            <li><Link href="/services">Services</Link></li>
-                            <li><Link href="/contact">Contact</Link></li>
-                            <li><Link href="/about#leadership">Leadership</Link></li>
-                        </ul>
+                <div className="footer-top-nav">
+                    <div className="footer-logo">
+                        <img src={logoImg.src} alt="Dev Artist" className="brand-logo" style={{ width: '180px', height: 'auto', transform: 'scale(1.5)', transformOrigin: 'left center' }} />
                     </div>
-                    <div className="footer-col">
-                        <h4>Industries</h4>
-                        <ul>
-                            <li><Link href="#">Travel & Hospitality</Link></li>
-                            <li><Link href="#">Public Sector</Link></li>
-                            <li><Link href="#">Retail & CPG</Link></li>
-                            <li><Link href="#">Banking & Fintech</Link></li>
-                            <li><Link href="#">Healthcare</Link></li>
-                        </ul>
+
+                </div>
+
+                <div className="footer-locations-grid">
+                    {/* Headquarters */}
+                    <div className="location-col">
+                        <div className="location-header">
+                            <strong>Headquarters</strong> <span className="office-type">(Faisalabad)</span>
+                            <span className="flag-icon">🇵🇰</span>
+                        </div>
+                        <p className="address">
+                            Office No 2, 2nd Floor, Adam Plaza,<br />
+                            Above Stylo Shoes, Bilal Chowk,<br />
+                            Samanabad, Faisalabad
+                        </p>
+                        <div className="contact-details mt-15">
+                            <p className="phone"><i className="fas fa-phone-alt"></i> +92 320 3000555</p>
+                        </div>
                     </div>
-                    <div className="footer-col">
-                        <h4>Services</h4>
-                        <ul>
-                            <li><Link href="#">Web Development</Link></li>
-                            <li><Link href="#">App Development</Link></li>
-                            <li><Link href="#">Generative AI</Link></li>
-                            <li><Link href="#">Cloud Application</Link></li>
-                            <li><Link href="#">UI/UX Design</Link></li>
-                        </ul>
+
+                    {/* Tech Academy */}
+                    <div className="location-col">
+                        <div className="location-header">
+                            <strong>Tech Academy</strong> <span className="office-type">(Training Center)</span>
+                            <span className="flag-icon">🎓</span>
+                        </div>
+                        <p className="address">
+                            Visit our Faisalabad campus for<br />
+                            hands-on training in MERN Stack,<br />
+                            Python, and AI Development.
+                        </p>
+                        <p className="working-hours mt-15">
+                            <i className="far fa-clock"></i> Mon-Sat, 9am - 6pm
+                        </p>
                     </div>
-                    <div className="footer-col">
-                        <h4>Global Presence</h4>
-                        <div style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.9rem' }}>
-                            <p style={{ marginBottom: '10px' }}><strong>Pakistan (GDC):</strong> Lahore, Punjab</p>
-                            <p style={{ marginBottom: '10px' }}><strong>USA:</strong> San Jose, CA</p>
-                            <p style={{ marginBottom: '10px' }}><strong>UAE:</strong> JLT, Dubai</p>
-                            <p style={{ marginBottom: '10px' }}><strong>UK:</strong> City Road, London</p>
-                            <p style={{ marginBottom: '10px' }}><strong>KSA:</strong> Riyadh, KSA</p>
+
+                    {/* Reach Out / Global Reach */}
+                    <div className="location-col">
+                        <div className="location-header">
+                            <strong>Global Reach</strong> <span className="office-type">(Remote Teams)</span>
+                            <span className="flag-icon">🌐</span>
+                        </div>
+                        <p className="address">
+                            Serving clients across USA, UK,<br />
+                            and UAE with dedicated offshore<br />
+                            engineering teams.
+                        </p>
+                        <div className="mt-15">
+                            <Link href="/contact" className="footer-cta-link">Start a Project →</Link>
                         </div>
                     </div>
                 </div>
 
-                <div className="footer-bottom">
-                    <p>&copy; {new Date().getFullYear()} Devsinc. All Rights Reserved.</p>
-                    <div className="social-links">
+                <div className="footer-bottom-info">
+                    <div className="footer-email">
+                        <a href="mailto:thedevartist.1@gmail.com">thedevartist.1@gmail.com</a>
+                    </div>
+                    <div className="footer-social">
                         <a href="#"><i className="fab fa-facebook-f"></i></a>
                         <a href="#"><i className="fab fa-twitter"></i></a>
                         <a href="#"><i className="fab fa-instagram"></i></a>
                         <a href="#"><i className="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
+            </div>
+
+            {/* Let's Talk Business Side Tab */}
+            <div className="footer-side-tab">
+                Let's Talk Business
             </div>
         </footer>
     );
