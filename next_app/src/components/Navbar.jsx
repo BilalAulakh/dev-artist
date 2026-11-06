@@ -1,11 +1,12 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { services } from '../data/services';
-import logoImg from '../assets/logo without bg.png';
+import BrandLogo from './BrandLogo';
 
-const Chevron = () => (
-    <svg className="chevron" width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+const Chevron = ({ size = 10 }) => (
+    <svg className="chevron" width={size} height={size} viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M2 4.5L6 8.5L10 4.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
 );
@@ -13,6 +14,8 @@ const Chevron = () => (
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [servicesOpen, setServicesOpen] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const pathname = usePathname();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -22,7 +25,37 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const menuItems = ['What We Do', 'Who We Help'];
+    // Handle smooth scrolling when navigating to /#contact or clicking it
+    useEffect(() => {
+        if (window.location.hash === '#contact') {
+            const timer = setTimeout(() => {
+                const element = document.getElementById('contact');
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 100);
+            return () => clearTimeout(timer);
+        }
+    }, [pathname]);
+
+    const handleContactClick = (e) => {
+        setMobileMenuOpen(false);
+        if (window.location.pathname === '/') {
+            e.preventDefault();
+            const element = document.getElementById('contact');
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                window.history.pushState(null, '', '#contact');
+            }
+        }
+    };
+
+    const menuItems = [
+        { label: 'What We Do', href: '/what-we-do' },
+        { label: 'Who We Help', href: '/who-we-help' },
+        { label: 'Projects', href: '/projects' },
+        { label: 'Institute', href: '/institute' },
+    ];
 
     // Group services by category for the mega menu
     const grouped = services.reduce((acc, s) => {
@@ -36,28 +69,32 @@ const Navbar = () => {
                 <nav>
                     <div className="nav-left">
                         <Link href="/" className="logo-container" aria-label="Home">
-                            <img src={logoImg.src} alt="Dev Artist" className="brand-logo" />
+                            <BrandLogo height={scrolled ? 38 : 44} />
                         </Link>
                     </div>
 
-                    <div className="nav-center">
+                    <div className={`nav-center ${mobileMenuOpen ? 'mobile-open' : ''}`}>
                         <ul className="nav-links">
                             {menuItems.map((item) => (
-                                <li key={item}>
-                                    <Link href="#">
-                                        <span>{item}</span>
-                                        <Chevron />
+                                <li key={item.href}>
+                                    <Link href={item.href} prefetch onClick={() => setMobileMenuOpen(false)}>
+                                        <span>{item.label}</span>
                                     </Link>
                                 </li>
                             ))}
+                            <li className="mobile-only-contact">
+                                <Link href="/#contact" onClick={handleContactClick}>
+                                    <span>Contact Us</span>
+                                </Link>
+                            </li>
                             <li
                                 className="nav-services-item"
                                 onMouseEnter={() => setServicesOpen(true)}
                                 onMouseLeave={() => setServicesOpen(false)}
                             >
-                                <Link href="/services" prefetch onClick={() => setServicesOpen(false)}>
+                                <Link href="/services" prefetch onClick={() => { setServicesOpen(false); setMobileMenuOpen(false); }}>
                                     <span>Our Services</span>
-                                    <Chevron />
+                                    <Chevron size={16} />
                                 </Link>
                                 <div className={`mega-menu ${servicesOpen ? 'open' : ''}`}>
                                     <div className="mega-menu-inner">
@@ -97,10 +134,14 @@ const Navbar = () => {
                     </div>
 
                     <div className="nav-right">
-                        <div className="global-menu">
-                            <span>Global</span>
-                            <Chevron />
-                        </div>
+                        <Link href="/#contact" className="global-menu" onClick={handleContactClick}>
+                            <span>Contact Us</span>
+                        </Link>
+                        <button className={`hamburger ${mobileMenuOpen ? 'open' : ''}`} onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle Menu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
                     </div>
                 </nav>
             </div>
@@ -146,14 +187,15 @@ const Navbar = () => {
                     align-items: center;
                 }
 
-                .brand-logo {
-                    width: 80px;
-                    height: auto;
-                    transform: scale(1.8);
-                    transform-origin: left center;
+                .nav-left :global(.logo-container) {
+                    display: inline-flex;
+                    align-items: center;
+                    line-height: 0;
                     transition: transform 0.3s ease;
                 }
-                .brand-logo:hover { transform: scale(1.85); }
+                .nav-left :global(.logo-container:hover) {
+                    transform: translateY(-1px);
+                }
 
                 .nav-center {
                     flex: 1;
@@ -194,6 +236,10 @@ const Navbar = () => {
                 }
                 .nav-links li a:hover { color: var(--accent-teal); }
                 .nav-links li a:hover::after { width: 100%; }
+
+                .mobile-only-contact {
+                    display: none;
+                }
 
                 :global(.chevron) {
                     color: var(--accent-teal);
@@ -342,16 +388,88 @@ const Navbar = () => {
                     box-shadow: 0 8px 18px rgba(0, 194, 203, 0.35);
                 }
 
+                .hamburger {
+                    display: none;
+                    background: none;
+                    border: none;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    height: 18px;
+                    width: 24px;
+                    cursor: pointer;
+                    padding: 0;
+                    z-index: 1001;
+                    margin-left: 20px;
+                }
+                .hamburger span {
+                    display: block;
+                    width: 100%;
+                    height: 2px;
+                    background: #0c112b;
+                    transition: all 0.3s ease;
+                    border-radius: 2px;
+                }
+                .hamburger.open span:nth-child(1) {
+                    transform: translateY(8px) rotate(45deg);
+                }
+                .hamburger.open span:nth-child(2) {
+                    opacity: 0;
+                }
+                .hamburger.open span:nth-child(3) {
+                    transform: translateY(-8px) rotate(-45deg);
+                }
+
                 @media (max-width: 1100px) {
                     .mega-menu-inner { grid-template-columns: repeat(3, 1fr); }
                     .mega-cta { grid-column: 1 / -1; }
                 }
                 @media (max-width: 768px) {
                     .nav-container { padding: 0 20px; }
-                    .nav-links { gap: 24px; }
-                    .nav-links li a { font-size: 0.85rem; }
-                    .global-menu { padding: 8px 14px; font-size: 0.85rem; }
+                    .hamburger { display: flex; }
+                    .nav-center {
+                        position: fixed;
+                        top: 76px;
+                        left: 0;
+                        width: 100%;
+                        height: calc(100vh - 76px);
+                        background: #fff;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+                        padding: 40px 24px;
+                        transform: translateX(100%);
+                        transition: transform 0.3s ease, opacity 0.3s ease;
+                        opacity: 0;
+                        pointer-events: none;
+                        overflow-y: auto;
+                    }
+                    header.scrolled .nav-center {
+                        top: 64px;
+                        height: calc(100vh - 64px);
+                    }
+                    .nav-center.mobile-open {
+                        transform: translateX(0);
+                        opacity: 1;
+                        pointer-events: auto;
+                    }
+                    .nav-links {
+                        flex-direction: column;
+                        gap: 24px;
+                        width: 100%;
+                    }
+                    .nav-links li { width: 100%; }
+                    .nav-links li a {
+                        font-size: 1.1rem;
+                        display: flex;
+                        justify-content: space-between;
+                        width: 100%;
+                        padding: 12px 0;
+                        border-bottom: 1px solid rgba(0,0,0,0.05);
+                    }
+                    .nav-links li a::after { display: none; }
+                    .global-menu { display: none; }
                     .mega-menu { display: none; }
+                    .mobile-only-contact { display: block; }
                 }
             `}</style>
         </header>

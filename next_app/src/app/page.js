@@ -3,10 +3,12 @@ import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import danishImg from '../assets/danish.png';
 import bilalImg from '../assets/bilal.png';
-import rizwanImg from '../assets/rizwan.jpeg';
+import rizwanImg from '../assets/ubaid-image.png';
+import { industries } from '../data/industries';
 
 const Home = () => {
     const insightsRef = useRef(null);
+    
     const trackRefs = useRef([]);
     const careersRef = useRef(null);
     const careersImgRef = useRef(null);
@@ -15,7 +17,8 @@ const Home = () => {
     // Leadership data
     const leaders = [
         { name: 'Danish Faryad', role: 'Founder & CEO', img: danishImg.src, linkedin: 'https://www.linkedin.com/in/danish-faryad-2157a32a6' },
-        
+        { name: 'Muhammad Bilal', role: 'Chief Technology Officer', img: bilalImg.src, linkedin: 'https://www.linkedin.com/in/muhammad-bilal-9b950a3a6' },
+        { name: 'Ubaid Umer', role: 'Managing Director', img: rizwanImg.src, linkedin: '' },
     ];
 
     useEffect(() => {
@@ -124,9 +127,7 @@ const Home = () => {
                 <div className="container">
                     <div className="hero-content">
                         <h1 className="hero-heading">
-                            <span className="line-text">Building at the Speed</span>
-                            <span className="blue-cursor-block" aria-hidden="true"></span>
-                            <span className="line-text">of AI</span>
+                            <span className="line-text">Building at the Speed of AI</span>
                         </h1>
                         <p className="hero-subtitle">
                             We help companies across North America, Middle East, Africa and Asia Pacific with technological development
@@ -266,14 +267,11 @@ const Home = () => {
                 <div className="container">
                     <h2 className="section-title" style={{ fontSize: '3rem' }}>Discover our Impact Across Industries</h2>
                     <div className="industry-list">
-                        <div className="industry-item"><i className="fas fa-plane-departure"></i> Travel & Hospitality</div>
-                        <div className="industry-item"><i className="fas fa-university"></i> Public Sector</div>
-                        <div className="industry-item"><i className="fas fa-broadcast-tower"></i> Telecommunication</div>
-                        <div className="industry-item"><i className="fas fa-shopping-bag"></i> Retail & CPG</div>
-                        <div className="industry-item"><i className="fas fa-wallet"></i> Banking & Fintech</div>
-                        <div className="industry-item"><i className="fas fa-heartbeat"></i> Healthcare</div>
-                        <div className="industry-item"><i className="fas fa-gas-pump"></i> Oil, Gas, and Energy</div>
-                        <div className="industry-item"><i className="fas fa-gamepad"></i> Gaming</div>
+                        {industries.map((ind) => (
+                            <Link key={ind.slug} href={`/industries/${ind.slug}`} className="industry-item">
+                                <i className={ind.icon}></i> {ind.title}
+                            </Link>
+                        ))}
                     </div>
                     <div style={{ textAlign: 'center', marginTop: '50px' }}>
                         <Link href="/industries" className="btn btn-teal">See All Industries</Link>
@@ -506,7 +504,7 @@ const Home = () => {
             </section>
 
             {/* INTEGRATED CONTACT SECTION */}
-            <section className="section-padding" style={{ background: '#f8fafc' }}>
+            <section id="contact" className="section-padding" style={{ background: '#f8fafc', scrollMarginTop: '90px' }}>
                 <div className="container">
                     <div className="contact-integrated">
                         <div className="contact-form-container">
@@ -534,12 +532,45 @@ const Home = () => {
                         </div>
                         <div className="contact-sidebar">
                             <div className="sidebar-item">
-                                <h3><i className="fas fa-map-marker-alt"></i> Our Headquarters</h3>
-                                <p>Office No 2, 2nd Floor, Adam Plaza, Above Stylo Shoes, Bilal Chowk, Samanabad, Faisalabad</p>
+                                <h3><i className="fas fa-map-marker-alt"></i> Headquarters (Bradford)</h3>
+                                <p>Bradford, United Kingdom</p>
+                                <p>
+                                    <a
+                                        href="https://wa.me/447423253692"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="sidebar-phone"
+                                        aria-label="Chat with Bradford office on WhatsApp"
+                                    >
+                                        <i className="fab fa-whatsapp"></i> +44 7423253692
+                                    </a>
+                                </p>
                             </div>
                             <div className="sidebar-item">
-                                <h3><i className="fas fa-phone-alt"></i> Call Us</h3>
-                                <p>+92 320 3000555<br/>+92 334 3474707</p>
+                                <h3><i className="fas fa-map-marker-alt"></i> Sub Office (Faisalabad)</h3>
+                                <p>Faisalabad, Punjab, Pakistan</p>
+                                <p>
+                                    <a
+                                        href="https://wa.me/923203000555"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="sidebar-phone"
+                                        aria-label="Chat with Faisalabad office on WhatsApp"
+                                    >
+                                        <i className="fab fa-whatsapp"></i> +92 320 3000555
+                                    </a>
+                                </p>
+                                <p>
+                                    <a
+                                        href="https://wa.me/923343474707"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="sidebar-phone"
+                                        aria-label="Chat with Faisalabad office on WhatsApp"
+                                    >
+                                        <i className="fab fa-whatsapp"></i> +92 334 3474707
+                                    </a>
+                                </p>
                             </div>
                             <div className="sidebar-item">
                                 <h3><i className="fas fa-envelope"></i> Email Us</h3>
